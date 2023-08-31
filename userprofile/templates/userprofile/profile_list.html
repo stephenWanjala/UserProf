@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2>User Profiles</h2>
+  <ul class="list-group">
+    {% for profile in profiles %}
+      <li class="list-group-item">
+        <a href="{% url 'user_detail' profile.pk %}">{{ profile.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
